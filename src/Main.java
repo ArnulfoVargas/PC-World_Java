@@ -1,17 +1,24 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import PC.PC;
+import InputDevices.*;
+import OutputDevices.Monitor;
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Keyboard keyboard1 = new Keyboard("USB", "Corsair");
+        Keyboard keyboard2 = new Keyboard("USB-C", "Razer");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        Mouse mouse1 = new Mouse("USB", "Logitech");
+        Mouse mouse2 = new Mouse("USB", "Cooler Master");
+
+        Monitor monitor1 = new Monitor("AOC", 24);
+        Monitor monitor2 = new Monitor("LG", 26);
+
+        PC pc1 = new PC("Terminator", keyboard2, mouse1, monitor2);
+        PC pc2 = new PC("Beginator", keyboard1, mouse2, monitor1);
+
+        System.out.println(pc1);
+        System.out.println(pc2);
     }
 }
