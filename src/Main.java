@@ -1,3 +1,4 @@
+import Order.Order;
 import PC.PC;
 import InputDevices.*;
 import OutputDevices.Monitor;
@@ -18,7 +19,11 @@ public class Main
         PC pc1 = new PC("Terminator", keyboard2, mouse1, monitor2);
         PC pc2 = new PC("Beginator", keyboard1, mouse2, monitor1);
 
-        System.out.println(pc1);
-        System.out.println(pc2);
+        Order order = new Order();
+
+        order.AddPC(pc1);
+        order.AddPC(pc2);
+
+        order.ShowOrder();
     }
 }
